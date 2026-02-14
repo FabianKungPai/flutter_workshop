@@ -1,4 +1,5 @@
 import 'package:flutter_workshop/core/network/dio_client.dart';
+import 'package:flutter_workshop/data/models/sale_history.dart';
 
 class SaleHistoryService {
   Future<void> createSaleHistory (
@@ -25,6 +26,15 @@ class SaleHistoryService {
     );
     } catch (e) {
       rethrow; // throw Excaption
+    }
+  }
+
+  Future<List<SaleHistory>> GetAllSaleHistories() async {
+    try {
+      var response = await DioClient.dio.get("/v1/sale-histories");
+      return (response.data["result"] as List).map((item) => SaleHistory.fromJson(item)).toList();
+    } catch (e) {
+      rethrow;
     }
   }
   
