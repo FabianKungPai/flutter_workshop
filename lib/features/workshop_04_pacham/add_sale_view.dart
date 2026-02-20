@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_workshop/data/services/sale_history_service.dart';
 import 'package:flutter_workshop/features/workshop_04_pacham/get_all_sale_histories_view.dart';
 import 'package:intl/intl.dart';
-class AppForPaSabView extends StatefulWidget {
-  const AppForPaSabView({super.key});
+class AddSaleView extends StatefulWidget {
+  const AddSaleView({super.key});
 
   @override
-  State<AppForPaSabView> createState() => _AppForPaSabViewState();
+  State<AddSaleView> createState() => _AddSaleViewState();
 }
-class _AppForPaSabViewState extends State<AppForPaSabView> {
+class _AddSaleViewState extends State<AddSaleView> {
   final _formKey = GlobalKey<FormState>();
 
   final SaleHistoryService saleHistoryService = SaleHistoryService();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_workshop/features/workshop01_my_portfolio/myportfolio_view.dart';
 import 'package:flutter_workshop/features/workshop02_number_counter/number_counter_view.dart';
 import 'package:flutter_workshop/features/workshop_03_todo_app/create_todo_app_view.dart';
-import 'package:flutter_workshop/features/workshop_04_pacham/app_for_pa_sab_view.dart';
+import 'package:flutter_workshop/features/workshop_04_pacham/add_sale_view.dart';
 import 'package:flutter_workshop/features/workshop_04_pacham/get_all_sale_histories_view.dart';
 
 void main() {

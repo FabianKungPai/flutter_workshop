@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_workshop/data/models/sale_history.dart';
 import 'package:flutter_workshop/data/services/sale_history_service.dart';
+import 'package:flutter_workshop/features/workshop_04_pacham/add_sale_view.dart';
 import 'package:flutter_workshop/features/workshop_04_pacham/view_sale_history_detail_view.dart';
 
 class GetAllSaleHistoriesView extends StatefulWidget {
@@ -49,6 +50,16 @@ class _GetAllSaleHistoriesViewState extends State<GetAllSaleHistoriesView> {
       appBar: AppBar(
         title: Text('Get all sale histories'),
         backgroundColor: Colors.blue,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const AddSaleView(),
+            ),
+          ).then((_) => fetchAll());
+        },
+        child: const Icon(Icons.add),
       ),
       body: isLoading? 
         Center(
