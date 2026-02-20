@@ -35,7 +35,7 @@ class SaleHistory {
         price: json["price"],
         saleDate: DateTime.parse(json["saleDate"]),
         qty: json["qty"],
-        postponePayDate: json["postponePayDate"],
+        postponePayDate: json['postponePayDate'] == null ? null : DateTime.parse(json['postponePayDate']),
         paymentMethod: json["paymentMethod"],
         overdue: json["overdue"],
     );
