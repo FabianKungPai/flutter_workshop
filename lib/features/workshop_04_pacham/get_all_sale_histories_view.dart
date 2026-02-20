@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_workshop/data/models/sale_history.dart';
 import 'package:flutter_workshop/data/services/sale_history_service.dart';
+import 'package:flutter_workshop/features/workshop_04_pacham/view_sale_history_detail_view.dart';
 
 class GetAllSaleHistoriesView extends StatefulWidget {
   const GetAllSaleHistoriesView({super.key});
@@ -61,6 +62,14 @@ class _GetAllSaleHistoriesViewState extends State<GetAllSaleHistoriesView> {
           var saleHistory = saleHistories[index];
           return Card(
             child: ListTile(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext buildContext) {
+                      return ViewSaleHistoryDetailView(id: saleHistory.id!);
+                    })
+                );
+              },
               title:  Text("${saleHistory.productName} x (${saleHistory.qty})"),
               trailing: Text("${saleHistory.price! * saleHistory.qty!}"),
             ),

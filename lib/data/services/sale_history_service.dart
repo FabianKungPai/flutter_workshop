@@ -37,5 +37,13 @@ class SaleHistoryService {
       rethrow;
     }
   }
-  
+
+  Future<SaleHistory> GetSaleHistoryById(int id) async {
+    try {
+      var response = await DioClient.dio.get("/v1/sale-histories/$id");
+      return SaleHistory.fromJson(response.data["result"]);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
